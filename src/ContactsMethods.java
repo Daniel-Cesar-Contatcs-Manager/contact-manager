@@ -23,50 +23,46 @@ public abstract class ContactsMethods implements ContactsCrud {
     }
 
     public void addContactCL() {
-//        String directory = "ContactList";
-//        String filename = "contacts.txt";
-//        Path dataDirectory = Paths.get(directory);
-//        Path dataFile = Paths.get(directory, filename);
-//
-//        if (Files.notExists(dataDirectory)) {
-//            try {
-//                Files.createDirectories(dataDirectory);
-//            } catch (IOException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+        String directory = "ContactList";
+        String filename = "contacts.txt";
+        Path dataDirectory = Paths.get(directory);
+        Path dataFile = Paths.get(directory, filename);
+
+        if (Files.notExists(dataDirectory)) {
+            try {
+                Files.createDirectories(dataDirectory);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
 ////      you can also create files:
-//        if (Files.notExists(dataFile)) {
-//            try {
-//                Files.createFile(dataFile);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-
-//   }
-
-//    Path p = Paths.get("src", "test.txt");
-//
-//    List<String> newNames = Arrays.asList("John", "Fred", "Cathy");
-//        try {
-//        Files.write(p, newNames, StandardOpenOption.APPEND);
-//    } catch (IOException e) {
-//        e.printStackTrace();
-//    }
-//
-//        List<String> names = new ArrayList<>();
-//        names.add("Tim");
-//        names.add("Sally");
-//        names.add("Mary");
-//
-//        try {
-//            Files.write(p, names, StandardOpenOption.APPEND);
-//        } catch(IOException e) {
-//            e.printStackTrace();
-//        }
+        if (Files.notExists(dataFile)) {
+            try {
+                Files.createFile(dataFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+   }
 
 
+    List<String> newNames = Arrays.asList("John", "Fred", "Cathy");
+        try {
+        Files.write(p, newNames, StandardOpenOption.APPEND);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+
+        List<String> names = new ArrayList<>();
+        names.add("Tim");
+        names.add("Sally");
+        names.add("Mary");
+
+        try {
+            Files.write(p, names, StandardOpenOption.APPEND);
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
 
 }
 
@@ -79,6 +75,9 @@ public abstract class ContactsMethods implements ContactsCrud {
             }
             writeLines(updatedNames);
     }
+
+//    private void writeLines(List<String> updatedNames) {
+//    }
 
     public void deleteAllContactsCL() {
         //delete file at the end of path p

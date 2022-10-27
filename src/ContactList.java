@@ -5,8 +5,12 @@ public class ContactList extends ContactsMethods {
                 Scanner scanner = new Scanner(System.in);
                 do {
                     System.out.println("""
-                            pick your poison
-                            """);
+                            1. View contacts.
+                            2. Add a new contact.
+                            3. Search a contact by name.
+                            4. Delete an existing contact.
+                            5. Exit.
+                            Enter an option (1, 2, 3, 4 or 5):""");
                     // USER INPUT
                     if (view){
                         System.out.println("""
@@ -49,6 +53,7 @@ public class ContactList extends ContactsMethods {
 
             }
 }
+
 /*
 interface define functions:
  1)Read
@@ -61,6 +66,7 @@ interface define functions:
         -check if phone numbers are the correct length with a recursive method
    -extra  b) add multiple (extra, but very doable, justin showed us how)  extra -
    !important  c) create txt file
+   -extra d) find regex to normalize phone numbers extra-
  3) delete
     a) delete one
     b) delete all
