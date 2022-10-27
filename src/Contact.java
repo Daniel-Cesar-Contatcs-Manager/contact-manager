@@ -90,4 +90,7 @@ interface define functions:
  2) call for user input (scanner)
 
 
+
+
+when we are done, refactor contact list into a hash map where name is key and phone number is a value
  */
