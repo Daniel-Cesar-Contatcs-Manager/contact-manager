@@ -67,14 +67,18 @@ public abstract class ContactsMethods implements ContactsCrud {
 
 
 
-    void deleteContactCL(String nameToDelete) {
+    void deleteContactCL(String nameToDelete) throws IOException {
             List<String> updatedNames = new ArrayList<>();
             for (String name : readLines()) {
                 if (!name.equalsIgnoreCase(nameToDelete)) {
                     updatedNames.add(name);
                 }
             }
-            writeLines(updatedNames);
+            try {
+                Files.write(p, updatedNames);
+            } catch (IOException e) {
+            System.out.println("do better");
+        }
     }
 
 //    private void writeLines(List<String> updatedNames) {
