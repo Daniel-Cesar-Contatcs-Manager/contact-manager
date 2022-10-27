@@ -49,12 +49,12 @@ public class Contact extends ContactsMethods {
                         if (deleteChoiceDN == '1' || deleteChoiceDN == 'd'){
                             System.out.println("Choose contact to delete.");
                             String deleteOneChoiceDN = scanner.nextLine();
-/*end of delete one*/   } else {
-                        if (deleteChoiceDN == '2' || deleteChoiceDN == 'c'){
+/*end of delete one*/   } else if (deleteChoiceDN == '2' || deleteChoiceDN == 'c'){
                             System.out.println("Clearing all contacts.");
                             String deleteOneChoiceDN = scanner.nextLine();
+/*end of delete all*/   } else {
+                            continue;
                         }
-/*end of delete all*/   }
 /*end of delete*/   } else {
                         break;
 /*end of exit*/     }
