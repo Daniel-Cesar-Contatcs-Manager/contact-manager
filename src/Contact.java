@@ -14,11 +14,14 @@ public class Contact extends ContactsMethods {
                     char menuChoiceDN = scanner.next().toLowerCase().charAt(0);
                     if (menuChoiceDN == '1' || menuChoiceDN == 'v'){
                         System.out.println("""
-                                all, search one, or search many
+                                1. View All.
+                                2. Search a specific contact.
+                                3. Search for many.
+                                4. Return to main menu.
                                 """);
-                        char viewChoiceDN = scanner.next().toLowerCase().charAt(0);
+                    char viewChoiceDN = scanner.next().toLowerCase().charAt(0);
                         if (search one){
-                            System.out.println("who you want?");
+                            System.out.println("Enter contact name.");
                             String searchDN = scanner.nextLine();
 
 /*end of search one*/   } else if (search many){
@@ -33,18 +36,24 @@ public class Contact extends ContactsMethods {
                         String newContactDN = scanner.nextLine();
                         // call add method with newContactDN as argument
 /*end of add*/      //} else if (menuChoiceDN == '3' || menuChoiceDN == 'u') {
+                            /* we can use write and search methods*/
 
 /*end of update*/   } else if (menuChoiceDN == '4' || menuChoiceDN == 'd') {
                         System.out.println("""
-                                delete one or all""");
-                        char deleteChoiceDN = scanner.next().toLowerCase().charAt(0);
+                                1. Delete one contact.
+                                2. Clear all contacts.
+                                3. Return to main menu.
+                                """);
+                    char deleteChoiceDN = scanner.next().toLowerCase().charAt(0);
 
-                        if (one){
-                            System.out.println("who need to gone?");
+                        if (deleteChoiceDN == '1' || deleteChoiceDN == 'd'){
+                            System.out.println("Choose contact to delete.");
                             String deleteOneChoiceDN = scanner.nextLine();
-
 /*end of delete one*/   } else {
-
+                        if (deleteChoiceDN == '2' || deleteChoiceDN == 'c'){
+                            System.out.println("Clearing all contacts.");
+                            String deleteOneChoiceDN = scanner.nextLine();
+                        }
 /*end of delete all*/   }
 /*end of delete*/   } else {
                         break;
