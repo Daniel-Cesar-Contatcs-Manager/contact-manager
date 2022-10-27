@@ -12,6 +12,7 @@ interface define functions:
  2) add
     a) create new contact from nothing
         -add contact to its own line in txt file
+        -check if phone numbers are the correct length with a recursive method
    -extra  b) add multiple (extra, but very doable, justin showed us how)  extra -
    !important  c) create txt file
  3) delete
@@ -26,4 +27,6 @@ interface define functions:
         I) before exiting rewrite contact file
         II) this is the only endpoint to UI (loop where this is the only break)
  2) call for user input (scanner)
+
+
  */
