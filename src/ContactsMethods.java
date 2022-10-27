@@ -10,8 +10,19 @@ import java.util.List;
 
 
 public abstract class ContactsMethods implements ContactsCrud {
+    Path p = Paths.get("contactList", "contacts.txt");
 
-    void addContactCL() {
+    private List<String> readLines() {
+        List<String> names;
+        try {
+            names = Files.readAllLines(p);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return names;
+    }
+
+    public void addContactCL() {
 //        String directory = "ContactList";
 //        String filename = "contacts.txt";
 //        Path dataDirectory = Paths.get(directory);
@@ -55,45 +66,30 @@ public abstract class ContactsMethods implements ContactsCrud {
 //            e.printStackTrace();
 //        }
 
-//    private static List<String> readLines() {
-//        List<String> names;
-//        try {
-//            names = Files.readAllLines(PATH);
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//        return names;
-//    }
+
 
 }
 
-    void deleteContactCL() {
-//        private static void deleteName(String nameToDelete) {
-//            List<String> updatedNames = new ArrayList<>();
-//            for (String name : readLines()) {
-//                if (!name.equalsIgnoreCase(nameToDelete)) {
-//                    updatedNames.add(name);
-//                }
-//            }
-//            writeLines(updatedNames);
-//        }
+    void deleteContactCL(String nameToDelete) {
+            List<String> updatedNames = new ArrayList<>();
+            for (String name : readLines()) {
+                if (!name.equalsIgnoreCase(nameToDelete)) {
+                    updatedNames.add(name);
+                }
+            }
+            writeLines(updatedNames);
     }
 
-    void deleteAllContactsCL() {
-//        private static void deleteName(String nameToDelete) {
-//            List<String> updatedNames = new ArrayList<>();
-//            for (String name : readLines()) {
-//                if (!name.equalsIgnoreCase(nameToDelete)) {
-//                    updatedNames.add(name);
-//                }
-//            }
-//            writeLines(updatedNames);
-//        }
-//    }
-
+    public void deleteAllContactsCL() {
+        //delete file at the end of path p
+        try {
+            Files.deleteIfExists(p);
+        } catch (Throwable t) {
+            System.out.println("bruh");
+        }
     }
 
-    void viewContactsCL() {
+    public void viewContactsCL() {
 //                    private static List<String> readLines() {
 //                        List<String> names;
 //                        try {
@@ -107,11 +103,11 @@ public abstract class ContactsMethods implements ContactsCrud {
 
     }
 
-    void searchContactCL() {
+    public void searchContactCL() {
 
     }
 
-    void editContactCL() {
+    public void editContactCL() {
 
     }
 
