@@ -11,37 +11,37 @@ public class Contact extends ContactsMethods {
                             4. Delete an existing contact.
                             5. Exit.
                             Enter an option (1, 2, 3, 4 or 5):""");
-                    char menuChoice = scanner.next().toLowerCase().charAt(0);
-                    if (menuChoice == '1' || menuChoice == 'v'){
+                    char menuChoiceDN = scanner.next().toLowerCase().charAt(0);
+                    if (menuChoiceDN == '1' || menuChoiceDN == 'v'){
                         System.out.println("""
                                 all, search one, or search many
                                 """);
-                        // USER INPUT
+                        char viewChoiceDN = scanner.next().toLowerCase().charAt(0);
                         if (search one){
                             System.out.println("who you want?");
-                            // USER INPUT
+                            String searchDN = scanner.nextLine();
 
 /*end of search one*/   } else if (search many){
                             System.out.println("who all you want?");
-                            // USER INPUT
+                            String searchGroupDN = scanner.nextLine();
 
 /*end of search many*/  } else {
 
 /*end of view all*/     }
-/*end of view*/     } else if (menuChoice == '2' || menuChoice == 'a') {
+/*end of view*/     } else if (menuChoiceDN == '2' || menuChoiceDN == 'a') {
                         System.out.println("name and phone number");
-                        // USER INPUT
+                        String newContactDN = scanner.nextLine();
+                        // call add method with newContactDN as argument
+/*end of add*/      //} else if (menuChoiceDN == '3' || menuChoiceDN == 'u') {
 
-/*end of add*/      //} else if (menuChoice == '3' || menuChoice == 'u') {
-
-/*end of update*/   } else if (menuChoice == '4' || menuChoice == 'd') {
+/*end of update*/   } else if (menuChoiceDN == '4' || menuChoiceDN == 'd') {
                         System.out.println("""
                                 delete one or all""");
-                        // USER INPUT
+                        char deleteChoiceDN = scanner.next().toLowerCase().charAt(0);
 
                         if (one){
                             System.out.println("who need to gone?");
-                            // USER INPUT
+                            String deleteOneChoiceDN = scanner.nextLine();
 
 /*end of delete one*/   } else {
 
