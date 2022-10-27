@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ContactList extends ContactsMethods {
+public class Contact extends ContactsMethods {
             public static void main(String[] args) {
                 Scanner scanner = new Scanner(System.in);
                 do {

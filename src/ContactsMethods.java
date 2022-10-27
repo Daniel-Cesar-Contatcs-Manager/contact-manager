@@ -11,6 +11,7 @@ import java.util.List;
 
 public abstract class ContactsMethods implements ContactsCrud {
     Path p = Paths.get("contactList", "contacts.txt");
+    Path dataDirectory = Paths.get("contactList");
 
     private List<String> readLines() {
         List<String> names;
@@ -23,11 +24,6 @@ public abstract class ContactsMethods implements ContactsCrud {
     }
 
     public void addContactCL() {
-        String directory = "ContactList";
-        String filename = "contacts.txt";
-        Path dataDirectory = Paths.get(directory);
-        Path dataFile = Paths.get(directory, filename);
-
         if (Files.notExists(dataDirectory)) {
             try {
                 Files.createDirectories(dataDirectory);
@@ -36,9 +32,9 @@ public abstract class ContactsMethods implements ContactsCrud {
             }
         }
 ////      you can also create files:
-        if (Files.notExists(dataFile)) {
+        if (Files.notExists(p)) {
             try {
-                Files.createFile(dataFile);
+                Files.createFile(p);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -64,7 +60,7 @@ public abstract class ContactsMethods implements ContactsCrud {
             e.printStackTrace();
         }
 
-}
+
 
     void deleteContactCL(String nameToDelete) {
             List<String> updatedNames = new ArrayList<>();
