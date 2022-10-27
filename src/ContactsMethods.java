@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -31,7 +32,7 @@ public abstract class ContactsMethods implements ContactsCrud {
 
 
 
-    public void addContactCL() {
+    public void addContactCL(String newNameDN) {
         if (Files.notExists(dataDirectory)) {
             try {
                 Files.createDirectories(dataDirectory);
@@ -39,7 +40,7 @@ public abstract class ContactsMethods implements ContactsCrud {
                 throw new RuntimeException(e);
             }
         }
-////      you can also create files:
+//      you can also create files:
         if (Files.notExists(p)) {
             try {
                 Files.createFile(p);
@@ -47,29 +48,15 @@ public abstract class ContactsMethods implements ContactsCrud {
                 e.printStackTrace();
             }
         }
-   }
 
-
-    List<String> newNames = Arrays.asList("John", "Fred", "Cathy");
-        try {
-        Files.write(p, newNames, StandardOpenOption.APPEND);
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-
-        List<String> names = new ArrayList<>();
-        names.add("Tim");
-        names.add("Sally");
-        names.add("Mary");
+        List<String> newNames = Collections.singletonList(newNameDN);
 
         try {
-            Files.write(p, names, StandardOpenOption.APPEND);
-        } catch(IOException e) {
+            Files.write(p, newNames, StandardOpenOption.APPEND);
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
+   }
 
 
 
