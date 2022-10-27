@@ -22,6 +22,14 @@ public abstract class ContactsMethods implements ContactsCrud {
         }
         return names;
     }
+// above is global
+
+
+
+
+
+
+
 
     public void addContactCL() {
         if (Files.notExists(dataDirectory)) {
@@ -62,6 +70,16 @@ public abstract class ContactsMethods implements ContactsCrud {
 
 
 
+
+
+
+
+
+
+
+
+
+
     void deleteContactCL(String nameToDelete) {
             List<String> updatedNames = new ArrayList<>();
             for (String name : readLines()) {
@@ -84,6 +102,15 @@ public abstract class ContactsMethods implements ContactsCrud {
         }
     }
 
+
+
+
+
+
+
+
+
+
     public void viewContactsCL() {
 //                    private static List<String> readLines() {
 //                        List<String> names;
@@ -97,6 +124,19 @@ public abstract class ContactsMethods implements ContactsCrud {
 //                }
 
     }
+
+       // what is the disctinction between view and search?
+    // VIEW IS VIEW ALL
+
+    // SEARCH WILL RETURN A PARSED CONTACT LIST (LIST<String>)
+    // VIEW WILL SOUT SEARCH (VOID)
+
+
+
+
+
+
+
 
     public void searchContactCL() {
 
