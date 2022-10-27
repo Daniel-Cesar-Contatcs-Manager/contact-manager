@@ -20,11 +20,11 @@ public class Contact extends ContactsMethods {
                                 4. Return to main menu.
                                 """);
                     char viewChoiceDN = scanner.next().toLowerCase().charAt(0);
-                        if (search one){
+                        if (viewChoiceDN == '2'){
                             System.out.println("Enter contact name.");
                             String searchDN = scanner.nextLine();
 
-/*end of search one*/   } else if (search many){
+/*end of search one*/   } else if (viewChoiceDN == '3' || viewChoiceDN == 's'){
                             System.out.println("who all you want?");
                             String searchGroupDN = scanner.nextLine();
 
