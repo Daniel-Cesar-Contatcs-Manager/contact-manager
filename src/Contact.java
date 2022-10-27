@@ -7,12 +7,12 @@ public class Contact extends ContactsMethods {
                     System.out.println("""
                             1. View contacts.
                             2. Add a new contact.
-                            3. Search a contact by name.
+                            3. Update a contact.
                             4. Delete an existing contact.
                             5. Exit.
                             Enter an option (1, 2, 3, 4 or 5):""");
-                    // USER INPUT
-                    if (view){
+                    char menuChoice = scanner.next().toLowerCase().charAt(0);
+                    if (menuChoice == '1' || menuChoice == 'v'){
                         System.out.println("""
                                 all, search one, or search many
                                 """);
@@ -28,13 +28,13 @@ public class Contact extends ContactsMethods {
 /*end of search many*/  } else {
 
 /*end of view all*/     }
-/*end of view*/     } else if (add) {
+/*end of view*/     } else if (menuChoice == '2' || menuChoice == 'a') {
                         System.out.println("name and phone number");
                         // USER INPUT
 
-/*end of add*/      //} else if (update) {
+/*end of add*/      //} else if (menuChoice == '3' || menuChoice == 'u') {
 
-/*end of update*/   } else if (delete) {
+/*end of update*/   } else if (menuChoice == '4' || menuChoice == 'd') {
                         System.out.println("""
                                 delete one or all""");
                         // USER INPUT
