@@ -1,7 +1,53 @@
-public class ContactList {
-    public static void main(String[] args) {
+import java.util.Scanner;
 
-    }
+public class ContactList {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                do {
+                    System.out.println("""
+                            pick your poison
+                            """);
+                    // USER INPUT
+                    if (view){
+                        System.out.println("""
+                                all, search one, or search many
+                                """);
+                        // USER INPUT
+                        if (search one){
+                            System.out.println("who you want?");
+                            // USER INPUT
+
+/*end of search one*/   } else if (search many){
+                            System.out.println("who all you want?");
+                            // USER INPUT
+
+/*end of search many*/  } else {
+
+/*end of view all*/     }
+/*end of view*/     } else if (add) {
+                        System.out.println("name and phone number");
+                        // USER INPUT
+
+/*end of add*/      //} else if (update) {
+
+/*end of update*/   } else if (delete) {
+                        System.out.println("""
+                                delete one or all""");
+                        // USER INPUT
+
+                        if (one){
+                            System.out.println("who need to gone?");
+                            // USER INPUT
+
+/*end of delete one*/   } else {
+
+/*end of delete all*/   }
+/*end of delete*/   } else {
+                        break;
+/*end of exit*/     }
+                } while (true);
+
+            }
 }
 /*
 interface define functions:
