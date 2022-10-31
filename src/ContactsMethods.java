@@ -57,7 +57,7 @@ public abstract class ContactsMethods {
     public static void deleteContactCL(String nameToDelete) {
         List<String> updatedNames = new ArrayList<>();
         for (String name : readLines()) {
-            if (!name.equalsIgnoreCase(nameToDelete)) {
+            if (!name.contains(nameToDelete)) {
                 updatedNames.add(name);
             }//this section is searching
             //can do this and add name to list and return the list
@@ -83,7 +83,7 @@ public abstract class ContactsMethods {
     }
 
 
-    public static void viewContactsCL() { // figure this out
+    public static void viewContactsCL() {
         List<String> names;
         try {
             names = Files.readAllLines(p);
@@ -93,14 +93,6 @@ public abstract class ContactsMethods {
         System.out.println(names);
     }
 
-    public static void viewContactsCL(List<String> contanctsList) { // figure this out too
-        try {
-            contanctsList = Files.readAllLines(p);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println(contanctsList);
-    }
 
 
        // what is the disctinction between view and search?
@@ -119,7 +111,7 @@ public abstract class ContactsMethods {
     public static List<String> searchOneContactCL(String singleSearch) {
         List<String> searchNames = new ArrayList<>();
         for (String name : readLines()) {
-            if (name.equalsIgnoreCase(singleSearch)) {
+            if (name.contains(singleSearch)) {
                 searchNames.add(name);
                 break;
             }
@@ -130,8 +122,10 @@ public abstract class ContactsMethods {
     public static List<String> searchAllContactsDN(String singleSearch) {
         List<String> searchNames = new ArrayList<>();
         for (String name : readLines()) {
-            if (name.equalsIgnoreCase(singleSearch)) {
+            if (name.contains(singleSearch)) {
                 searchNames.add(name);
+            } else {
+                continue;
             }
         }
         return searchNames;

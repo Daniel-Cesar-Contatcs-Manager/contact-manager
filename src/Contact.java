@@ -27,15 +27,15 @@ public class Contact extends ContactsMethods {
                             System.out.println("Enter contact name.");
                             String searchDN = scanner.nextLine();
 
-                            viewContactsCL(searchOneContactCL(searchDN));
+                            System.out.println((searchOneContactCL(searchDN)));
 
-/*end of search one*/   } else if (viewChoiceDN == '3' || viewChoiceDN == 's'){
+                            /*end of search one*/   } else if (viewChoiceDN == '3' || viewChoiceDN == 's'){
                             System.out.println("who all you want?");
                             String searchGroupDN = scanner.nextLine();
 
-                            viewContactsCL(searchAllContactsDN((searchGroupDN)));
+                            System.out.println((searchAllContactsDN((searchGroupDN))));
 
-/*end of search many*/  } else if (viewChoiceDN == '4' || viewChoiceDN == 'r'){
+                            /*end of search many*/  } else if (viewChoiceDN == '4' || viewChoiceDN == 'r'){
                             continue;
                         } else {
                             viewContactsCL();
