@@ -58,13 +58,15 @@ public class Contact extends ContactsMethods {
                             String phoneNumberLookup = scanner.nextLine();
                             System.out.println("Please enter the FULL Name that you would like associated with this phone number:");
                             String newName = scanner.nextLine();
-                            editContactNameCLDN(searchOneContactCL(phoneNumberLookup), newName);
+                            deleteContactCL(phoneNumberLookup);
+                            addContactCL(newName + " -- " + phoneNumberLookup);
                         } else if (editChoiceDN == '2' || editChoiceDN == 'p'){
                             System.out.println("Please enter the FULL NAME of the contact you would like to edit:");
                             String nameLookup = scanner.nextLine();
                             System.out.println("Please enter the FULL PHONE NUMBER that you would like associated with this name:");
                             String newNumber = scanner.nextLine();
-                            editContactNumberCLDN(searchOneContactCL(nameLookup), newNumber);
+                            deleteContactCL(nameLookup);
+                            addContactCL(nameLookup + " -- " + newNumber);
                         } else {
                             continue;
                         }

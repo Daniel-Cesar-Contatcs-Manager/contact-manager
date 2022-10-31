@@ -131,14 +131,13 @@ public abstract class ContactsMethods {
         return searchNames;
     }
 
-    public static void editContactNameCLDN(List<String> phoneNumberLookup, String newName) {
-        String phoneNumber = phoneNumberLookup.toString();
-        // return newname + " -- " + phone number
-    }
-
-    public static void editContactNumberCLDN(List<String> nameLookup, String newNumber) {
-
-    }
+//    public static void editContactNameCLDN(String phoneNumberLookup, String newName) {
+//        return newname + " -- " + phone number
+//    } //refactor to edit through the list instead of deleting and adding new
+//
+//    public static void editContactNumberCLDN(List<String> nameLookup, String newNumber) {
+//
+//    }
 
 //    void createContactListCL() {
 //
