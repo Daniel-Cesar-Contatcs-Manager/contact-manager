@@ -80,7 +80,7 @@ public abstract class ContactsMethods implements ContactsCrud {
     }
 
 
-    public void viewContactsCL() {
+    public static void viewContactsCL() { // figure this out
         List<String> names;
         try {
             names = Files.readAllLines(p);
@@ -88,6 +88,15 @@ public abstract class ContactsMethods implements ContactsCrud {
             throw new RuntimeException(e);
         }
         System.out.println(names);
+    }
+
+    public static void viewContactsCL(List<String> contanctsList) { // figure this out too
+        try {
+            contanctsList = Files.readAllLines(p);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(contanctsList);
     }
 
 
