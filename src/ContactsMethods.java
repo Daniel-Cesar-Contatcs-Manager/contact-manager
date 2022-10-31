@@ -26,12 +26,6 @@ public abstract class ContactsMethods implements ContactsCrud {
 // above is global
 
 
-
-
-
-
-
-
     public void addContactCL(String newNameDN) {
         if (Files.notExists(dataDirectory)) {
             try {
@@ -56,27 +50,19 @@ public abstract class ContactsMethods implements ContactsCrud {
         } catch (IOException e) {
             e.printStackTrace();
         }
-   }
-
-
-
-
-
-
-
-
+    }
 
 
     void deleteContactCL(String nameToDelete) throws IOException {
-            List<String> updatedNames = new ArrayList<>();
-            for (String name : readLines()) {
-                if (!name.equalsIgnoreCase(nameToDelete)) {
-                    updatedNames.add(name);
-                }
+        List<String> updatedNames = new ArrayList<>();
+        for (String name : readLines()) {
+            if (!name.equalsIgnoreCase(nameToDelete)) {
+                updatedNames.add(name);
             }
-            try {
-                Files.write(p, updatedNames);
-            } catch (IOException e) {
+        }
+        try {
+            Files.write(p, updatedNames);
+        } catch (IOException e) {
             System.out.println("do better");
         }
     }
@@ -94,27 +80,16 @@ public abstract class ContactsMethods implements ContactsCrud {
     }
 
 
-
-
-
-
-
-
-
-
     public void viewContactsCL() {
-//                    private static List<String> readLines() {
-//                        List<String> names;
-//                        try {
-//                            names = Files.readAllLines(PATH);
-//                        } catch (IOException e) {
-//                            throw new RuntimeException(e);
-//                        }
-//                        return names;
-//                    }
-//                }
-
+        List<String> names;
+        try {
+            names = Files.readAllLines(p);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(names);
     }
+
 
        // what is the disctinction between view and search?
     // VIEW IS VIEW ALL
