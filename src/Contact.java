@@ -56,11 +56,16 @@ public class Contact extends ContactsMethods {
                         char editChoiceDN = scanner.nextLine().toLowerCase().charAt(0);
                         if (editChoiceDN == '1' || editChoiceDN == 'n'){
                             System.out.println("Please enter the FULL PHONE NUMBER of the contact you would like to edit:");
-
+                            String phoneNumberLookup = scanner.nextLine();
+                            System.out.println("Please enter the FULL Name that you would like associated with this phone number:");
+                            String newName = scanner.nextLine();
+                            editContactNameCLDN(searchOneContactCL(phoneNumberLookup), newName);
                         } else if (editChoiceDN == '2' || editChoiceDN == 'p'){
                             System.out.println("Please enter the FULL NAME of the contact you would like to edit:");
-
-
+                            String nameLookup = scanner.nextLine();
+                            System.out.println("Please enter the FULL PHONE NUMBER that you would like associated with this name:");
+                            String newNumber = scanner.nextLine();
+                            editContactNumberCLDN(searchOneContactCL(nameLookup), newNumber);
                         } else {
                             continue;
                         }

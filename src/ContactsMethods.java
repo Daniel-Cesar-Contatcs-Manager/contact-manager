@@ -131,11 +131,11 @@ public abstract class ContactsMethods {
         return searchNames;
     }
 
-    public static void editContactNameCLDN(String newName) {
+    public static void editContactNameCLDN(List<String> phoneNumberLookup, String newName) {
 
     }
 
-    public static void editContactNumberCLDN(String newNumber) {
+    public static void editContactNumberCLDN(List<String> nameLookup, String newNumber) {
 
     }
 
