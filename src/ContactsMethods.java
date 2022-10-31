@@ -33,12 +33,6 @@ public abstract class ContactsMethods {
                 throw new RuntimeException(e);
             }
         }
-    }
-
-    public static void addContactCL(List<String> newNameDN) {
-        createContactListCL();
-
-//      you can also create files:
         if (Files.notExists(p)) {
             try {
                 Files.createFile(p);
@@ -46,7 +40,10 @@ public abstract class ContactsMethods {
                 e.printStackTrace();
             }
         }
+    }
 
+    public static void addContactCL(List<String> newNameDN) {
+        createContactListCL();
         try {
             Files.write(p, newNameDN, StandardOpenOption.APPEND);
         } catch (IOException e) {

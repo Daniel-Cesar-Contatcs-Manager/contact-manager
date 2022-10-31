@@ -6,6 +6,7 @@ public class Contact extends ContactsMethods {
             public static void main(String[] args) throws IOException {
                 Scanner scanner = new Scanner(System.in);
                 do {
+                    createContactListCL();
                     System.out.println("""
                             1. View contacts.
                             2. Add a new contact.
@@ -13,7 +14,7 @@ public class Contact extends ContactsMethods {
                             4. Delete an existing contact.
                             5. Exit.
                             Enter an option (1, 2, 3, 4 or 5):""");
-                    char menuChoiceDN = scanner.next().toLowerCase().charAt(0);
+                    char menuChoiceDN = scanner.nextLine().toLowerCase().charAt(0);
                     if (menuChoiceDN == '1' || menuChoiceDN == 'v'){
                         System.out.println("""
                                 1. View All.
@@ -21,12 +22,12 @@ public class Contact extends ContactsMethods {
                                 3. Search for many.
                                 4. Return to main menu.
                                 """);
-                    char viewChoiceDN = scanner.next().toLowerCase().charAt(0);
+                    char viewChoiceDN = scanner.nextLine().toLowerCase().charAt(0);
                         if (viewChoiceDN == '2'){
                             System.out.println("Enter contact name.");
                             String searchDN = scanner.nextLine();
 
-                            viewContactsCL(searchOneContactCL(searchDN));
+                            addContactCL(searchOneContactCL(searchDN));
 
 /*end of search one*/   } else if (viewChoiceDN == '3' || viewChoiceDN == 's'){
                             System.out.println("who all you want?");
@@ -53,7 +54,7 @@ public class Contact extends ContactsMethods {
                                 2. Clear all contacts.
                                 3. Return to main menu.
                                 """);
-                    char deleteChoiceDN = scanner.next().toLowerCase().charAt(0);
+                    char deleteChoiceDN = scanner.nextLine().toLowerCase().charAt(0);
 
                         if (deleteChoiceDN == '1' || deleteChoiceDN == 'd'){
                             System.out.println("Choose contact to delete.");
