@@ -34,7 +34,9 @@ public class Contact extends ContactsMethods {
 
                             viewContactsCL(searchAllContactsDN((searchGroupDN)));
 
-/*end of search many*/  } else {
+/*end of search many*/  } else if (viewChoiceDN == '4' || viewChoiceDN == 'r'){
+                            continue;
+                        } else {
                             viewContactsCL();
 /*end of view all*/     }
 /*end of view*/     } else if (menuChoiceDN == '2' || menuChoiceDN == 'a') {
