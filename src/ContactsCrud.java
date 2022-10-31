@@ -1,14 +1,18 @@
+import java.util.List;
+
 public interface ContactsCrud {
 
-    void addContactCL();
+    void addContactCL(List<String> newNameDN);
 
-    void deleteContactCL();
+    void deleteContactCL(String nameToDelete);
 
     void deleteAllContactsCL();
 
     void viewContactsCL();
 
-    void searchContactCL();
+    List<String> searchOneContactCL(String singleSearch);
+
+    List<String> searchAllContactsDN(String singleSearch);
 
     void editContactCL();
 

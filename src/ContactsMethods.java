@@ -25,8 +25,7 @@ public abstract class ContactsMethods implements ContactsCrud {
     }
 // above is global
 
-
-    public static void addContactCL(List<String> newNameDN) {
+    public void createContactListCL(){
         if (Files.notExists(dataDirectory)) {
             try {
                 Files.createDirectories(dataDirectory);
@@ -34,6 +33,11 @@ public abstract class ContactsMethods implements ContactsCrud {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    public void addContactCL(List<String> newNameDN) {
+        createContactListCL();
+
 //      you can also create files:
         if (Files.notExists(p)) {
             try {
@@ -51,7 +55,7 @@ public abstract class ContactsMethods implements ContactsCrud {
     }
 
 
-    void deleteContactCL(String nameToDelete) throws IOException {
+    public void deleteContactCL(String nameToDelete) {
         List<String> updatedNames = new ArrayList<>();
         for (String name : readLines()) {
             if (!name.equalsIgnoreCase(nameToDelete)) {
@@ -70,7 +74,7 @@ public abstract class ContactsMethods implements ContactsCrud {
 //    private void writeLines(List<String> updatedNames) {
 //    }
 
-    public void deleteAllContactsCL() {
+    public void deleteAllContactsCL() { // figure this out
         //delete file at the end of path p
         try {
             Files.deleteIfExists(p);
@@ -80,7 +84,7 @@ public abstract class ContactsMethods implements ContactsCrud {
     }
 
 
-    public static void viewContactsCL() { // figure this out
+    public void viewContactsCL() { // figure this out
         List<String> names;
         try {
             names = Files.readAllLines(p);
@@ -113,7 +117,7 @@ public abstract class ContactsMethods implements ContactsCrud {
 
 
 
-    public static List<String> searchOneContactCL(String singleSearch) {
+    public List<String> searchOneContactCL(String singleSearch) {
         List<String> searchNames = new ArrayList<>();
         for (String name : readLines()) {
             if (!name.equalsIgnoreCase(singleSearch)) {
@@ -124,7 +128,7 @@ public abstract class ContactsMethods implements ContactsCrud {
         return searchNames;
     }
 
-    public static List<String> searchAllContactsDN(String singleSearch) {
+    public List<String> searchAllContactsDN(String singleSearch) {
         List<String> searchNames = new ArrayList<>();
         for (String name : readLines()) {
             if (!name.equalsIgnoreCase(singleSearch)) {

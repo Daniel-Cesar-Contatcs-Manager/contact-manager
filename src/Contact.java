@@ -1,8 +1,9 @@
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
 public class Contact extends ContactsMethods {
-            public static void main(String[] args) {
+            public static void main(String[] args) throws IOException {
                 Scanner scanner = new Scanner(System.in);
                 do {
                     System.out.println("""
@@ -55,9 +56,15 @@ public class Contact extends ContactsMethods {
                         if (deleteChoiceDN == '1' || deleteChoiceDN == 'd'){
                             System.out.println("Choose contact to delete.");
                             String deleteOneChoiceDN = scanner.nextLine();
+
+                            deleteContactCL(deleteOneChoiceDN);
+
 /*end of delete one*/   } else if (deleteChoiceDN == '2' || deleteChoiceDN == 'c'){
                             System.out.println("Clearing all contacts.");
                             String deleteOneChoiceDN = scanner.nextLine();
+
+                            deleteAllContactsCL();
+
 /*end of delete all*/   } else {
                             continue;
                         }
