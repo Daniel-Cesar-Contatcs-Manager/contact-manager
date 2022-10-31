@@ -24,17 +24,13 @@ public class Contact extends ContactsMethods {
                                 """);
                     char viewChoiceDN = scanner.nextLine().toLowerCase().charAt(0);
                         if (viewChoiceDN == '2'){
-                            System.out.println("Enter contact name.");
+                            System.out.println("Enter contact name: ");
                             String searchDN = scanner.nextLine();
-
                             System.out.println((searchOneContactCL(searchDN)));
-
 /*end of search one*/   } else if (viewChoiceDN == '3' || viewChoiceDN == 's'){
                             System.out.println("Enter search term?");
                             String searchGroupDN = scanner.nextLine();
-
                             System.out.println((searchAllContactsDN((searchGroupDN))));
-
 /*end of search many*/  } else if (viewChoiceDN == '4' || viewChoiceDN == 'r'){
                             continue;
                         } else {
@@ -54,16 +50,16 @@ public class Contact extends ContactsMethods {
                                 3) Return to main menu""");
                         char editChoiceDN = scanner.nextLine().toLowerCase().charAt(0);
                         if (editChoiceDN == '1' || editChoiceDN == 'n'){
-                            System.out.println("Please enter the FULL PHONE NUMBER of the contact you would like to edit:");
+                            System.out.println("Please enter the FULL PHONE NUMBER of the contact you would like to edit: ");
                             String phoneNumberLookup = scanner.nextLine();
-                            System.out.println("Please enter the FULL Name that you would like associated with this phone number:");
+                            System.out.println("Please enter the FULL Name that you would like associated with this phone number: ");
                             String newName = scanner.nextLine();
                             deleteContactCL(phoneNumberLookup);
                             addContactCL(newName + " -- " + phoneNumberLookup);
 /*end of update name*/  } else if (editChoiceDN == '2' || editChoiceDN == 'p'){
-                            System.out.println("Please enter the FULL NAME of the contact you would like to edit:");
+                            System.out.println("Please enter the FULL NAME of the contact you would like to edit: ");
                             String nameLookup = scanner.nextLine();
-                            System.out.println("Please enter the FULL PHONE NUMBER that you would like associated with this name:");
+                            System.out.println("Please enter the FULL PHONE NUMBER that you would like associated with this name: ");
                             String newNumber = scanner.nextLine();
                             deleteContactCL(nameLookup);
                             addContactCL(nameLookup + " -- " + newNumber);
@@ -77,17 +73,13 @@ public class Contact extends ContactsMethods {
                                 3. Return to main menu.
                                 """);
                         char deleteChoiceDN = scanner.nextLine().toLowerCase().charAt(0);
-
                         if (deleteChoiceDN == '1' || deleteChoiceDN == 'd'){
-                            System.out.println("Choose contact to delete.");
+                            System.out.println("Choose contact to delete: ");
                             String deleteOneChoiceDN = scanner.nextLine();
-
                             deleteContactCL(deleteOneChoiceDN);
-
 /*end of delete one*/   } else if (deleteChoiceDN == '2' || deleteChoiceDN == 'c'){
                             System.out.println("Clearing all contacts.");
                             deleteAllContactsCL();
-
 /*end of delete all*/   } else {
                             continue;
                         }

@@ -8,10 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-
-
 public abstract class ContactsMethods {
-    // above is global util
+    // global util
     static Path p = Paths.get("contactList", "contacts.txt");
     static Path dataDirectory = Paths.get("contactList");
     private static List<String> readLines() {
@@ -23,7 +21,7 @@ public abstract class ContactsMethods {
         }
         return names;
     }
-    // init
+    // init (create directory and file if they don't already exist)
     public static void createContactListCL(){
         if (Files.notExists(dataDirectory)) {
             try {
