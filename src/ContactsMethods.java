@@ -11,10 +11,10 @@ import java.util.List;
 
 
 public abstract class ContactsMethods implements ContactsCrud {
-    Path p = Paths.get("contactList", "contacts.txt");
-    Path dataDirectory = Paths.get("contactList");
+    static Path p = Paths.get("contactList", "contacts.txt");
+    static Path dataDirectory = Paths.get("contactList");
 
-    private List<String> readLines() {
+    private static List<String> readLines() {
         List<String> names;
         try {
             names = Files.readAllLines(p);
@@ -26,7 +26,7 @@ public abstract class ContactsMethods implements ContactsCrud {
 // above is global
 
 
-    public void addContactCL(String newNameDN) {
+    public static void addContactCL(List<String> newNameDN) {
         if (Files.notExists(dataDirectory)) {
             try {
                 Files.createDirectories(dataDirectory);
@@ -43,10 +43,8 @@ public abstract class ContactsMethods implements ContactsCrud {
             }
         }
 
-        List<String> newNames = Collections.singletonList(newNameDN);
-
         try {
-            Files.write(p, newNames, StandardOpenOption.APPEND);
+            Files.write(p, newNameDN, StandardOpenOption.APPEND);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -106,7 +104,7 @@ public abstract class ContactsMethods implements ContactsCrud {
 
 
 
-    public List<String> searchOneContactCL(String singleSearch) {
+    public static List<String> searchOneContactCL(String singleSearch) {
         List<String> searchNames = new ArrayList<>();
         for (String name : readLines()) {
             if (!name.equalsIgnoreCase(singleSearch)) {
@@ -117,7 +115,7 @@ public abstract class ContactsMethods implements ContactsCrud {
         return searchNames;
     }
 
-    public List<String> searchAllContactsDN(String singleSearch) {
+    public static List<String> searchAllContactsDN(String singleSearch) {
         List<String> searchNames = new ArrayList<>();
         for (String name : readLines()) {
             if (!name.equalsIgnoreCase(singleSearch)) {

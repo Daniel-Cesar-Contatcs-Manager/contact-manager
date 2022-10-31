@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Contact extends ContactsMethods {
@@ -23,17 +24,17 @@ public class Contact extends ContactsMethods {
                         if (viewChoiceDN == '2'){
                             System.out.println("Enter contact name.");
                             String searchDN = scanner.nextLine();
-
+                           addContactCL (searchOneContactCL(searchDN));
 /*end of search one*/   } else if (viewChoiceDN == '3' || viewChoiceDN == 's'){
                             System.out.println("who all you want?");
                             String searchGroupDN = scanner.nextLine();
-
 /*end of search many*/  } else {
 
 /*end of view all*/     }
 /*end of view*/     } else if (menuChoiceDN == '2' || menuChoiceDN == 'a') {
                         System.out.println("name and phone number");
                         String newContactDN = scanner.nextLine();
+                        addContactCL (searchOneContactCL(newContactDN));
                         // call add method with newContactDN as argument
 /*end of add*/      //} else if (menuChoiceDN == '3' || menuChoiceDN == 'u') {
                             /* we can use write and search methods*/
