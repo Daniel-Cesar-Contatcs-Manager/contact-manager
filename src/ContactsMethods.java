@@ -23,7 +23,7 @@ public abstract class ContactsMethods {
         }
         return names;
     }
-// above is global
+// above is global util
 
     public static void createContactListCL(){
         if (Files.notExists(dataDirectory)) {
@@ -59,9 +59,7 @@ public abstract class ContactsMethods {
         for (String name : readLines()) {
             if (!name.contains(nameToDelete)) {
                 updatedNames.add(name);
-            }//this section is searching
-            //can do this and add name to list and return the list
-            // line 58 initated a for loop that adds multiple to the list. If we want only one added do not include loop.
+            }
         }
         try {
             Files.write(p, updatedNames);
@@ -70,11 +68,8 @@ public abstract class ContactsMethods {
         }
     }
 
-//    private void writeLines(List<String> updatedNames) {
-//    }
 
-    public static void deleteAllContactsCL() { // figure this out
-        //delete file at the end of path p
+    public static void deleteAllContactsCL() {
         try {
             Files.deleteIfExists(p);
         } catch (Throwable t) {
@@ -92,19 +87,6 @@ public abstract class ContactsMethods {
         }
         System.out.println(names);
     }
-
-
-
-       // what is the disctinction between view and search?
-    // VIEW IS VIEW ALL
-
-    // SEARCH WILL RETURN A PARSED CONTACT LIST (LIST<String>)
-    // VIEW WILL SOUT SEARCH (VOID)
-
-
-
-
-
 
 
 
@@ -139,13 +121,9 @@ public abstract class ContactsMethods {
 //
 //    }
 
-//    void createContactListCL() {
-//
-//    }
 
 //    void addMultiple(){
+    // this might not be a successful method, might have to make a loop in main that calls add every enter that isnt the exit command
 //  }
 
-//    void exitMethodCL(){
-//  }
 }

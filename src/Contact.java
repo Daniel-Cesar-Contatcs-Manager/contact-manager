@@ -107,7 +107,6 @@ interface define functions:
    -extra  b) add multiple (extra, but very doable, justin showed us how)  extra -
    // use scanner to dump directly into a list
    -extra d) find regex to normalize phone numbers extra-
-4) update extra-
 
 when we are done, refactor contact list into a hash map where name is key and phone number is a value
  */
