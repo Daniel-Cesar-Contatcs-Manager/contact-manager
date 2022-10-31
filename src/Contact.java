@@ -30,7 +30,7 @@ public class Contact extends ContactsMethods {
                             System.out.println((searchOneContactCL(searchDN)));
 
                             /*end of search one*/   } else if (viewChoiceDN == '3' || viewChoiceDN == 's'){
-                            System.out.println("who all you want?");
+                            System.out.println("Enter search term?");
                             String searchGroupDN = scanner.nextLine();
 
                             System.out.println((searchAllContactsDN((searchGroupDN))));
@@ -41,12 +41,31 @@ public class Contact extends ContactsMethods {
                             viewContactsCL();
 /*end of view all*/     }
 /*end of view*/     } else if (menuChoiceDN == '2' || menuChoiceDN == 'a') {
-                        System.out.println("name and phone number");
-                        String newContactDN = scanner.nextLine();
-                        addContactCL(newContactDN);
+                        System.out.println("What is the full name of the new contact?");
+                        String newContactNameDN = scanner.nextLine();
+                        System.out.printf("What is %s's phone number?%n", newContactNameDN);
+                        String newContactNumberDN = scanner.nextLine();
+                        addContactCL(newContactNameDN + " -- " + newContactNumberDN);
                         // call add method with newContactDN as argument
-/*end of add*/      //} else if (menuChoiceDN == '3' || menuChoiceDN == 'u') {
-                            /* we can use write and search methods*/
+/*end of add*/      } else if (menuChoiceDN == '3' || menuChoiceDN == 'u') {
+                        System.out.println("""
+                                Would you like to edit the:
+                                1) Name of a contact
+                                2) Phone number of a contact
+                                3) Return to main menu""");
+                        char editChoiceDN = scanner.nextLine().toLowerCase().charAt(0);
+                        if (editChoiceDN == '1' || editChoiceDN == 'n'){
+                            System.out.println("Please enter the FULL PHONE NUMBER of the contact you would like to edit:");
+
+                        } else if (editChoiceDN == '2' || editChoiceDN == 'p'){
+                            System.out.println("Please enter the FULL NAME of the contact you would like to edit:");
+
+
+                        } else {
+                            continue;
+                        }
+
+                        /* we can use write and search methods*/
 
 /*end of update*/   } else if (menuChoiceDN == '4' || menuChoiceDN == 'd') {
                         System.out.println("""

@@ -131,7 +131,11 @@ public abstract class ContactsMethods {
         return searchNames;
     }
 
-    public void editContactCL() {
+    public static void editContactNameCLDN(String newName) {
+
+    }
+
+    public static void editContactNumberCLDN(String newNumber) {
 
     }
 
