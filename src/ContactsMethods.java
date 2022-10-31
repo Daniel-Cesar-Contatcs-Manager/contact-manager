@@ -58,7 +58,9 @@ public abstract class ContactsMethods implements ContactsCrud {
         for (String name : readLines()) {
             if (!name.equalsIgnoreCase(nameToDelete)) {
                 updatedNames.add(name);
-            }
+            }//this section is searching
+            //can do this and add name to list and return the list
+            // line 58 initated a for loop that adds multiple to the list. If we want only one added do not include loop.
         }
         try {
             Files.write(p, updatedNames);
