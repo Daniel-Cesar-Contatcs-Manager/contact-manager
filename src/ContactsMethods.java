@@ -132,7 +132,8 @@ public abstract class ContactsMethods {
     }
 
     public static void editContactNameCLDN(List<String> phoneNumberLookup, String newName) {
-
+        String phoneNumber = phoneNumberLookup.toString();
+        // return newname + " -- " + phone number
     }
 
     public static void editContactNumberCLDN(List<String> nameLookup, String newNumber) {

@@ -29,13 +29,13 @@ public class Contact extends ContactsMethods {
 
                             System.out.println((searchOneContactCL(searchDN)));
 
-                            /*end of search one*/   } else if (viewChoiceDN == '3' || viewChoiceDN == 's'){
+/*end of search one*/   } else if (viewChoiceDN == '3' || viewChoiceDN == 's'){
                             System.out.println("Enter search term?");
                             String searchGroupDN = scanner.nextLine();
 
                             System.out.println((searchAllContactsDN((searchGroupDN))));
 
-                            /*end of search many*/  } else if (viewChoiceDN == '4' || viewChoiceDN == 'r'){
+/*end of search many*/  } else if (viewChoiceDN == '4' || viewChoiceDN == 'r'){
                             continue;
                         } else {
                             viewContactsCL();
@@ -46,7 +46,6 @@ public class Contact extends ContactsMethods {
                         System.out.printf("What is %s's phone number?%n", newContactNameDN);
                         String newContactNumberDN = scanner.nextLine();
                         addContactCL(newContactNameDN + " -- " + newContactNumberDN);
-                        // call add method with newContactDN as argument
 /*end of add*/      } else if (menuChoiceDN == '3' || menuChoiceDN == 'u') {
                         System.out.println("""
                                 Would you like to edit the:
@@ -69,9 +68,6 @@ public class Contact extends ContactsMethods {
                         } else {
                             continue;
                         }
-
-                        /* we can use write and search methods*/
-
 /*end of update*/   } else if (menuChoiceDN == '4' || menuChoiceDN == 'd') {
                         System.out.println("""
                                 1. Delete one contact.
@@ -103,36 +99,13 @@ public class Contact extends ContactsMethods {
 
 /*
 interface define functions:
- 1)Read
-    a) search and display an individual contact
-    b) display all
-    c) display all that contain the search criteria
+
  2) add
-    a) create new contact from nothing
-        -add contact to its own line in txt file  ????????????? maybe ??????????????
         -check if phone numbers are the correct length with a recursive method   xxxxxxxxxx not yet xxxxxxxxxxx
    -extra  b) add multiple (extra, but very doable, justin showed us how)  extra -
    // use scanner to dump directly into a list
-
-
-
-
-   !important  c) create txt file
    -extra d) find regex to normalize phone numbers extra-
- 3) delete
-    a) delete one
-    b) delete all
- - extra 4) update extra-
- in main:
- 1) have a main menu that presents options to the user
-    a) crud
-    b) exit
-        I) before exiting rewrite contact file xxxxxxxxxx not yet, ask for help xxxxxxxxxxxx
-        II) this is the only endpoint to UI (loop where this is the only break)
- 2) call for user input (scanner)
-
-
-
+4) update extra-
 
 when we are done, refactor contact list into a hash map where name is key and phone number is a value
  */
