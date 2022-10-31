@@ -68,12 +68,17 @@ interface define functions:
  1)Read
     a) search and display an individual contact
     b) display all
-    - extra c) display all that contain the search criteria  extra -
+    c) display all that contain the search criteria
  2) add
     a) create new contact from nothing
-        -add contact to its own line in txt file
-        -check if phone numbers are the correct length with a recursive method
+        -add contact to its own line in txt file  ????????????? maybe ??????????????
+        -check if phone numbers are the correct length with a recursive method   xxxxxxxxxx not yet xxxxxxxxxxx
    -extra  b) add multiple (extra, but very doable, justin showed us how)  extra -
+   // use scanner to dump directly into a list
+
+
+
+
    !important  c) create txt file
    -extra d) find regex to normalize phone numbers extra-
  3) delete
@@ -84,7 +89,7 @@ interface define functions:
  1) have a main menu that presents options to the user
     a) crud
     b) exit
-        I) before exiting rewrite contact file
+        I) before exiting rewrite contact file xxxxxxxxxx not yet, ask for help xxxxxxxxxxxx
         II) this is the only endpoint to UI (loop where this is the only break)
  2) call for user input (scanner)
 
