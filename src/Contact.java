@@ -27,7 +27,7 @@ public class Contact extends ContactsMethods {
                             System.out.println("Enter contact name.");
                             String searchDN = scanner.nextLine();
 
-                            addContactCL(searchOneContactCL(searchDN));
+                            viewContactsCL(searchOneContactCL(searchDN));
 
 /*end of search one*/   } else if (viewChoiceDN == '3' || viewChoiceDN == 's'){
                             System.out.println("who all you want?");
@@ -43,7 +43,7 @@ public class Contact extends ContactsMethods {
 /*end of view*/     } else if (menuChoiceDN == '2' || menuChoiceDN == 'a') {
                         System.out.println("name and phone number");
                         String newContactDN = scanner.nextLine();
-                        addContactCL(searchOneContactCL(newContactDN));
+                        addContactCL(newContactDN);
                         // call add method with newContactDN as argument
 /*end of add*/      //} else if (menuChoiceDN == '3' || menuChoiceDN == 'u') {
                             /* we can use write and search methods*/
@@ -64,8 +64,6 @@ public class Contact extends ContactsMethods {
 
 /*end of delete one*/   } else if (deleteChoiceDN == '2' || deleteChoiceDN == 'c'){
                             System.out.println("Clearing all contacts.");
-                            String deleteOneChoiceDN = scanner.nextLine();
-
                             deleteAllContactsCL();
 
 /*end of delete all*/   } else {

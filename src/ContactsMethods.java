@@ -42,10 +42,12 @@ public abstract class ContactsMethods {
         }
     }
 
-    public static void addContactCL(List<String> newNameDN) {
+    public static void addContactCL(String newNameDN) {
         createContactListCL();
+        List<String> addedNameList =  new ArrayList<String>();
+        addedNameList.add(newNameDN);
         try {
-            Files.write(p, newNameDN, StandardOpenOption.APPEND);
+            Files.write(p, addedNameList, StandardOpenOption.APPEND);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -117,7 +119,7 @@ public abstract class ContactsMethods {
     public static List<String> searchOneContactCL(String singleSearch) {
         List<String> searchNames = new ArrayList<>();
         for (String name : readLines()) {
-            if (!name.equalsIgnoreCase(singleSearch)) {
+            if (name.equalsIgnoreCase(singleSearch)) {
                 searchNames.add(name);
                 break;
             }
@@ -128,7 +130,7 @@ public abstract class ContactsMethods {
     public static List<String> searchAllContactsDN(String singleSearch) {
         List<String> searchNames = new ArrayList<>();
         for (String name : readLines()) {
-            if (!name.equalsIgnoreCase(singleSearch)) {
+            if (name.equalsIgnoreCase(singleSearch)) {
                 searchNames.add(name);
             }
         }
