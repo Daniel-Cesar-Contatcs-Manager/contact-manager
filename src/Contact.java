@@ -60,14 +60,14 @@ public class Contact extends ContactsMethods {
                             String newName = scanner.nextLine();
                             deleteContactCL(phoneNumberLookup);
                             addContactCL(newName + " -- " + phoneNumberLookup);
-                        } else if (editChoiceDN == '2' || editChoiceDN == 'p'){
+/*end of update name*/  } else if (editChoiceDN == '2' || editChoiceDN == 'p'){
                             System.out.println("Please enter the FULL NAME of the contact you would like to edit:");
                             String nameLookup = scanner.nextLine();
                             System.out.println("Please enter the FULL PHONE NUMBER that you would like associated with this name:");
                             String newNumber = scanner.nextLine();
                             deleteContactCL(nameLookup);
                             addContactCL(nameLookup + " -- " + newNumber);
-                        } else {
+/*end of update number*/} else {
                             continue;
                         }
 /*end of update*/   } else if (menuChoiceDN == '4' || menuChoiceDN == 'd') {
@@ -76,7 +76,7 @@ public class Contact extends ContactsMethods {
                                 2. Clear all contacts.
                                 3. Return to main menu.
                                 """);
-                    char deleteChoiceDN = scanner.nextLine().toLowerCase().charAt(0);
+                        char deleteChoiceDN = scanner.nextLine().toLowerCase().charAt(0);
 
                         if (deleteChoiceDN == '1' || deleteChoiceDN == 'd'){
                             System.out.println("Choose contact to delete.");

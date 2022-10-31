@@ -11,9 +11,9 @@ import java.util.List;
 
 
 public abstract class ContactsMethods {
+    // above is global util
     static Path p = Paths.get("contactList", "contacts.txt");
     static Path dataDirectory = Paths.get("contactList");
-
     private static List<String> readLines() {
         List<String> names;
         try {
@@ -23,8 +23,7 @@ public abstract class ContactsMethods {
         }
         return names;
     }
-// above is global util
-
+    // init
     public static void createContactListCL(){
         if (Files.notExists(dataDirectory)) {
             try {
@@ -41,7 +40,7 @@ public abstract class ContactsMethods {
             }
         }
     }
-
+    // add
     public static void addContactCL(String newNameDN) {
         createContactListCL();
         List<String> addedNameList =  new ArrayList<String>();
@@ -52,8 +51,7 @@ public abstract class ContactsMethods {
             e.printStackTrace();
         }
     }
-
-
+    // delete
     public static void deleteContactCL(String nameToDelete) {
         List<String> updatedNames = new ArrayList<>();
         for (String name : readLines()) {
@@ -67,8 +65,6 @@ public abstract class ContactsMethods {
             System.out.println("do better");
         }
     }
-
-
     public static void deleteAllContactsCL() {
         try {
             Files.deleteIfExists(p);
@@ -76,8 +72,7 @@ public abstract class ContactsMethods {
             System.out.println("bruh");
         }
     }
-
-
+    // view all
     public static void viewContactsCL() {
         List<String> names;
         try {
@@ -87,9 +82,7 @@ public abstract class ContactsMethods {
         }
         System.out.println(names);
     }
-
-
-
+    // search
     public static List<String> searchOneContactCL(String singleSearch) {
         List<String> searchNames = new ArrayList<>();
         for (String name : readLines()) {
@@ -100,7 +93,6 @@ public abstract class ContactsMethods {
         }
         return searchNames;
     }
-
     public static List<String> searchAllContactsDN(String singleSearch) {
         List<String> searchNames = new ArrayList<>();
         for (String name : readLines()) {
@@ -113,6 +105,7 @@ public abstract class ContactsMethods {
         return searchNames;
     }
 
+    //unfinished bonuses
 //    public static void editContactNameCLDN(String phoneNumberLookup, String newName) {
 //        return newname + " -- " + phone number
 //    } //refactor to edit through the list instead of deleting and adding new
@@ -120,7 +113,6 @@ public abstract class ContactsMethods {
 //    public static void editContactNumberCLDN(List<String> nameLookup, String newNumber) {
 //
 //    }
-
 
 //    void addMultiple(){
     // this might not be a successful method, might have to make a loop in main that calls add every enter that isnt the exit command
