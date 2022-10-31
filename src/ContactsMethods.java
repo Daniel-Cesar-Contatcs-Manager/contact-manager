@@ -106,15 +106,23 @@ public abstract class ContactsMethods implements ContactsCrud {
 
 
 
-    public List<String> searchContactCL(String singleSearch) {
+    public List<String> searchOneContactCL(String singleSearch) {
         List<String> searchNames = new ArrayList<>();
         for (String name : readLines()) {
             if (!name.equalsIgnoreCase(singleSearch)) {
                 searchNames.add(name);
                 break;
-            }//this section is searching
-            //can do this and add name to list and return the list
-            // line 58 initated a for loop that adds multiple to the list. If we want only one added do not include loop.
+            }
+        }
+        return searchNames;
+    }
+
+    public List<String> searchAllContactsDN(String singleSearch) {
+        List<String> searchNames = new ArrayList<>();
+        for (String name : readLines()) {
+            if (!name.equalsIgnoreCase(singleSearch)) {
+                searchNames.add(name);
+            }
         }
         return searchNames;
     }
